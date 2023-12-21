@@ -5,6 +5,7 @@ import logo from '../../assets/logos/logo.png';
 const Navbar = () => {
   return (
     <>
+      <div className="container">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <div className='d-flex align-items-center gap-3'>
@@ -38,6 +39,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      </div>
     </>
   )
 }

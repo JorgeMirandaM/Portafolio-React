@@ -6,12 +6,13 @@ import cv from "../../assets/docs/CV.pdf";
 const IntroductionSection = () => {
     return (
         <>
+            <div className="container">
             <div className="row introductionSection py-0 py-sm-5">
                 <div className="col-12 col-sm-8 my-3 d-flex flex-column justify-content-between justify-content-xl-around gap-3 ga-sm-0 order-2 order-sm-1">
                     <h1 className='h3 text-center text-sm-start'>Hola, soy Jorge Federico Miranda Morones</h1>
-                    <h2 className='text-center text-sm-start'>
+                    <h2 className='text-center text-sm-start lh-base'>
                         Soy formado en Ingenieria en Sistemas Computacionales y
-                        desarrollador Frond-End.
+                        desarrollador Full-Stack.
                     </h2>
                     <ul className='d-flex gap-5 justify-content-center justify-content-sm-start'>
                         <li>
@@ -41,6 +42,7 @@ const IntroductionSection = () => {
                 <div className="col-12 col-sm-4 py-4 py-lg-0  text-center order-1 order-sm-2">
                     <img src={imagenUsuario} alt=""/>
                 </div>
+            </div>
             </div>
         </>
     )

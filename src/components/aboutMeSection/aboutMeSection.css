@@ -1,0 +1,11 @@
+.aboutMeSection{
+    background-color: #EAF2FD;
+}
+
+.aboutMeSection p{
+    text-align: justify;
+}
+
+.aboutMeSection li{
+    list-style: disc;
+}
