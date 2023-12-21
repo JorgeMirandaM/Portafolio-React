@@ -1,0 +1,54 @@
+.introductionSection h1{
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.introductionSection h2{
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.introductionSection img{
+    width: 219px;
+  height: 306px;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+/* Dispositivo xs  */
+@media screen and (max-width:320px) {}
+
+/* Dispositivo sm  */
+@media screen and (max-width:576px) {}
+
+/* Dispositivo md  */
+@media screen and (max-width:768px) {
+
+    .introductionSection h1{
+        font-size: 22px;
+    }
+    
+    .introductionSection h2{
+        font-size: 16px;
+    }
+    
+    .introductionSection img{
+        width: 100px;
+      height: 140px;
+    }
+    
+
+}
+
+/* Dispositivo lg */
+@media screen and (max-width:992px) {}
+
+/* Dispositivo xl  */
+@media screen and (max-width:1200px) {}
+
+/* Dispositivo xxl  */
+@media screen and (max-width:1400px) {}
