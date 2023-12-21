@@ -1,0 +1,41 @@
+.navbar{
+    padding: 32px 0;
+}
+
+.navbar-brand{
+    color:#464646
+}
+
+.navbar .nav-link{
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+/* Dispositivo xs  */
+@media screen and (max-width:320px) {}
+
+/* Dispositivo sm  */
+@media screen and (max-width:576px) {
+
+    .navbar-nombre-creador{
+        display: none;
+    }
+}
+
+/* Dispositivo md  */
+@media screen and (max-width:768px) {}
+
+/* Dispositivo lg */
+@media screen and (max-width:992px) {}
+
+/* Dispositivo xl  */
+@media screen and (max-width:1200px) {}
+
+/* Dispositivo xxl  */
+@media screen and (max-width:1400px) {}
