@@ -1,0 +1,50 @@
+export const skills=[
+    {
+        skill:"Html 5",
+        imageName:"html-5.png"
+    },
+    {
+        skill:"CSS",
+        imageName:"css-3.png"
+    },
+    {
+        skill:"Bootstrap",
+        imageName:"bootstrap.png"
+    },
+    {
+        skill:"JavaScript",
+        imageName:"js.png"
+    },
+    {
+        skill:"Java",
+        imageName:"java.png"
+    },
+    {
+        skill:"Node js",
+        imageName:"node-js.png"
+    },
+    {
+        skill:"Angular",
+        imageName:"angular.png"
+    },
+    {
+        skill:"React",
+        imageName:"react.png"
+    },
+    {
+        skill:"Firebase",
+        imageName:"firebase.png"
+    },
+    {
+        skill:"MySql",
+        imageName:"mysql.png"
+    },
+    {
+        skill:"Mongodb",
+        imageName:"mongodb.png"
+    },
+    {
+        skill:"Flutter",
+        imageName:"flutter.png"
+    }
+]
