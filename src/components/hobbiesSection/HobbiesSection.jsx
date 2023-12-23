@@ -1,7 +1,7 @@
 import React from 'react'
 import './hobbiesSection.css'
 
-const HobbiesSection = () => {
+export const HobbiesSection = () => {
     return (
         <>
             <div className="container hobbiesSection mb-5">
@@ -44,5 +44,3 @@ const HobbiesSection = () => {
         </>
     )
 }
-
-export default HobbiesSection

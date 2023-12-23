@@ -2,7 +2,7 @@ import React from 'react'
 import './navbar.css';
 import logo from '../../assets/logos/logo.png';
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <>
       <div className="container">
@@ -43,5 +43,3 @@ const Navbar = () => {
     </>
   )
 }
-
-export default Navbar

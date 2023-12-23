@@ -2,7 +2,7 @@ import React from 'react'
 import './skillsSection.css'
 import { skills } from './skills'
 
-const SkillsSection = () => {
+export const SkillsSection = () => {
   return (
     <>
         <div className="container skillSection mb-5">
@@ -24,5 +24,3 @@ const SkillsSection = () => {
     </>
   )
 }
-
-export default SkillsSection

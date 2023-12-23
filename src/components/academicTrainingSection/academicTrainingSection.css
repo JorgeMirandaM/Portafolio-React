@@ -1,0 +1,33 @@
+.academicTrainingSection {
+    background-color: #EAF2FD;
+}
+
+.academicTrainingSection h2 {
+    font-weight: 700;
+}
+
+
+.container-academicTraining {
+    width: 340px;
+
+}
+
+.container-academicTraining h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.container-academicTraining p {
+    font-weight: 500;
+}
+
+
+.academicTraining-whiteContainer {
+    width: 340px;
+    height: 255px;
+    background: #ffffff;
+}
+
+.academicTraining-whiteContainer img {
+    width: 200px;
+}

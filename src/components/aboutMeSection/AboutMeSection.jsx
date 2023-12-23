@@ -1,7 +1,7 @@
 import React from 'react';
 import './aboutMeSection.css'
 
-const AboutMeSection = () => {
+export const AboutMeSection = () => {
     return (
         <>
             <div className="container-fluid aboutMeSection py-0 py-sm-5 mb-5">
@@ -43,4 +43,3 @@ const AboutMeSection = () => {
     )
 }
 
-export default AboutMeSection

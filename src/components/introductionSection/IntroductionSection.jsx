@@ -3,7 +3,7 @@ import './introductionSection.css'
 import imagenUsuario from '../../assets/personal/foto_perfil.jpg'
 import cv from "../../assets/docs/CV.pdf";
 
-const IntroductionSection = () => {
+export const IntroductionSection = () => {
     return (
         <>
             <div className="container">
@@ -48,5 +48,4 @@ const IntroductionSection = () => {
     )
 }
 
-export default IntroductionSection
 

@@ -1,9 +1,5 @@
 import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
-import IntroductionSection from '../../components/introductionSection/IntroductionSection'
-import AboutMeSection from '../../components/aboutMeSection/AboutMeSection'
-import SkillsSection from '../../components/skillsSection/SkillsSection'
-import HobbiesSection from '../../components/hobbiesSection/HobbiesSection'
+import {Navbar,IntroductionSection,AboutMeSection,SkillsSection,HobbiesSection,AcademicTrainingSection} from '../../components'
 
 const Home = () => {
   return (
@@ -13,6 +9,7 @@ const Home = () => {
     <AboutMeSection/>
     <SkillsSection/>
     <HobbiesSection/>
+    <AcademicTrainingSection/>
     </>
   )
 }
