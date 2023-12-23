@@ -1,0 +1,19 @@
+.hobbiesSection h2{
+    font-weight: 700;
+}
+
+.hobbiesSection .container-hobbie{
+    width: 200px;
+    height: 200px;
+    background: #ffffff;
+    transition: all 300ms;
+}
+
+.hobbiesSection .container-hobbie:hover{
+    transform: scale(1.15);
+}
+
+
+.hobbiesSection .container-hobbie svg{
+    color: #2a7ae4;
+}

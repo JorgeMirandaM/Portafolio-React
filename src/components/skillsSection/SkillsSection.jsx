@@ -12,7 +12,7 @@ const SkillsSection = () => {
                     
                     {skills.map((skill,key)=>{
                         return (
-                            <div className="container-skill rounded d-inline-flex flex-column justify-content-end align-items-center gap-2 p-3" key={key}>
+                            <div className="container-skill rounded d-flex flex-column justify-content-end align-items-center gap-2 p-3" key={key}>
                                 <img src={`../assets/skills/${skill.imageName}`} alt="" />
                                 <p className='fw-bolder'>{skill.skill}</p>
                             </div>
