@@ -1,0 +1,17 @@
+.contactSection{
+    background-color: #EAF2FD;
+}
+
+
+.contactSection #textareaMensaje{
+    min-height: 100px;
+    height: 200px;
+    max-height: 300px;
+}
+
+.contactSection h2{
+    font-weight: 700;
+}
+
+
+
