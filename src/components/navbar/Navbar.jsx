@@ -5,6 +5,7 @@ import logo from '../../assets/logos/logo.png';
 export const Navbar = () => {
   return (
     <>
+      <div className="container-fluid fixed-top" style={{backgroundColor:"#F5F5F5"}}>
       <div className="container">
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
@@ -39,6 +40,7 @@ export const Navbar = () => {
           </div>
         </div>
       </nav>
+      </div>
       </div>
     </>
   )

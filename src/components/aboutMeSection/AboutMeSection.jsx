@@ -4,7 +4,7 @@ import './aboutMeSection.css'
 export const AboutMeSection = () => {
     return (
         <>
-            <div className="container-fluid aboutMeSection py-0 py-sm-5 mb-5">
+            <div className="container-fluid aboutMeSection py-0 py-sm-5 mb-5" id='sobreMi'>
                 <div className="container py-5">
                     <div className="row py-5 d-flex justify-content-between gap-4">
                         <div className="col-12 col-md-7 d-flex flex-column gap-3">

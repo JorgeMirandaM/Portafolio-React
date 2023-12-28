@@ -5,7 +5,7 @@ import { academicTraining } from './academicTraining'
 export const AcademicTrainingSection = () => {
   return (
     <>
-      <div className="container-fluid academicTrainingSection py-0 py-sm-5 mb-5">
+      <div className="container-fluid academicTrainingSection py-0 py-sm-5 mb-5" id='formacion'>
         <div className="container py-5">
           <div className="row">
             <h2 className='h2 text-center mb-5'>Formación Académica</h2>

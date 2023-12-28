@@ -5,7 +5,7 @@ import { projects } from './projects';
 export const ProjectsSection = () => {
     return (
         <>
-            <div className="container-fluid projectsSection py-5">
+            <div className="container-fluid projectsSection py-5" id='proyectos'>
                 <div className="row">
                     <h2 className='h2 text-center mb-5'>Proyectos</h2>
                     <div className="col-12 d-flex gap-5 justify-content-center flex-wrap">

@@ -4,7 +4,7 @@ import './hobbiesSection.css'
 export const HobbiesSection = () => {
     return (
         <>
-            <div className="container hobbiesSection mb-5">
+            <div className="container hobbiesSection mb-5" id='hobbies'>
                 <div className="row py-0 py-sm-5">
                     <h2 className='h2 text-center mb-5'>Hobbies</h2>
                     <div className="col-12 d-flex gap-3 justify-content-center flex-wrap">
