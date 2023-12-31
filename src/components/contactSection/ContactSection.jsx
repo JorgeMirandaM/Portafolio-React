@@ -11,33 +11,28 @@ const formData = {
 }
 
 const formValidations = {
-    name: [(value) => value.length >= 1, 'El nombre es obligatorio'],
-    email: [(value) => value.includes('@'), 'El correo debe de tener un @'],
-    topic: [(value) => value.length >= 1, 'El asunto es obligatorio'],
-    message: [(value) => value.length >= 1, 'El mensaje es obligatorio']
-
+    name: [(value) => value && value.trim().length <= 1 ? "El nombre debe ser mayor a 1 caracter" : null],
+    email: [(value) => { const regex = /^(\S+)@(\S+)(\.\S+)+$/; return value && !regex.test(value) ? 'Correo invalido' : null; }],
+    topic: [(value) => value && value.trim().length <= 1 ? "El nombre debe ser mayor a 1 caracter" : null],
+    message: [(value) => { const regex = /^(\S+){20,255}$/; return value && !regex.test(value) ? "El mensaje debe tener mas de 15 caracteres" : null; }]
 }
+
 
 
 export const ContactSection = () => {
 
-    const { formState, onInputChange, isFormValid, nameValid, emailValid,topicValid, messageValid } = useForm(formData, formValidations);
+    const { formState, onInputChange, isFormValid, nameValid, emailValid, topicValid, messageValid } = useForm(formData, formValidations);
 
     const { name, email, topic, message } = formState;
 
 
 
     const onSubmit = (e) => {
-        e.preventDefault();
-        const form=e.target;
-        if (!form.checkValidity()) {
-            form.preventDefault()
-            form.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
+        e.preventDefault()
+        if (!isFormValid) {
+            e.stopPropagation();
+        }
 
-          console.log(messageValid)
     }
 
     return (
@@ -57,48 +52,44 @@ export const ContactSection = () => {
                                     usted lo antes posible.
                                 </p>
                             </div>
-                            <form onSubmit={onSubmit}  className={`d-flex flex-column gap-4 contactForm `}>
+                            <form onSubmit={onSubmit} className={`d-flex flex-column gap-4 contactForm needs-validation`}>
                                 <div className="form-floating">
-                                    <input type="text" className='form-control' id='inputNombre' placeholder='Nombre' aria-describedby="validationNombre" name='name' value={name} onChange={onInputChange} required />
+                                    <input type="text" className='form-control' id='inputNombre' placeholder='Nombre'
+                                        aria-describedby="validationNombre" name='name' value={name} onChange={onInputChange} required/>
                                     <label htmlFor="inputNombre ">Nombre</label>
                                     {
-                                        !!nameValid ? <div className="invalid-feedback">
+                                        !!nameValid && <div className="alert alert-danger" role="alert">
                                             {nameValid}
-                                        </div> : <div className="valid-feedback">
-                                            Texto valido
                                         </div>
                                     }
                                 </div>
                                 <div className="form-floating">
-                                    <input type="email" className='form-control' id='inputEmail' placeholder='email@gmail.com' aria-describedby="validationEmail" name='email' value={email} onChange={onInputChange} required />
+                                    <input type="email" className='form-control' id='inputEmail' placeholder='email@gmail.com'
+                                        aria-describedby="validationEmail" name='email' value={email} onChange={onInputChange} required/>
                                     <label htmlFor="inputEmail">Correo</label>
                                     {
-                                        !!emailValid ? <div className="invalid-feedback">
+                                        !!emailValid && <div className="alert alert-danger" role="alert">
                                             {emailValid}
-                                        </div> : <div className="valid-feedback">
-                                            Correo valido
                                         </div>
                                     }
                                 </div>
                                 <div className="form-floating">
-                                    <input type="text" className='form-control' id='inputAsunto' placeholder='Asunto' name='topic' value={topic} onChange={onInputChange} required />
+                                    <input type="text" className='form-control' id='inputAsunto' placeholder='Asunto'
+                                        aria-describedby="validationTopic" name='topic' value={topic} onChange={onInputChange} required/>
                                     <label htmlFor="inputAsunto">Asunto</label>
                                     {
-                                        !!topicValid ? <div className="invalid-feedback">
+                                        !!topicValid && <div className="alert alert-danger" role="alert">
                                             {topicValid}
-                                        </div> : <div className="valid-feedback">
-                                            Texto valido
                                         </div>
                                     }
                                 </div>
                                 <div className="form-floating">
-                                    <textarea className="form-control" placeholder="Mensaje" id="textareaMensaje" name='message' value={message} onChange={onInputChange} required></textarea>
+                                    <textarea className="form-control" placeholder="Mensaje"
+                                        aria-describedby="validationMensaje" id="textareaMensaje" name='message' value={message} onChange={onInputChange} required></textarea>
                                     <label htmlFor="textareaMensaje">Mensaje</label>
                                     {
-                                        !!messageValid ? <div className="invalid-feedback">
+                                        !!messageValid && <div className="alert alert-danger" role="alert">
                                             {messageValid}
-                                        </div> : <div className="valid-feedback">
-                                            Texto valido
                                         </div>
                                     }
                                 </div>
