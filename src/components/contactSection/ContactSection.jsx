@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './contactSection.css';
 import contactImage from '../../assets/contacto/contacto.png'
 import { useForm } from '../../hooks/useForm';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
+
 
 const formData = {
     name: "",
@@ -14,23 +17,50 @@ const formValidations = {
     name: [(value) => value && value.trim().length <= 1 ? "El nombre debe ser mayor a 1 caracter" : null],
     email: [(value) => { const regex = /^(\S+)@(\S+)(\.\S+)+$/; return value && !regex.test(value) ? 'Correo invalido' : null; }],
     topic: [(value) => value && value.trim().length <= 1 ? "El nombre debe ser mayor a 1 caracter" : null],
-    message: [(value) => { const regex = /^(\S+){20,255}$/; return value && !regex.test(value) ? "El mensaje debe tener mas de 15 caracteres" : null; }]
+    message: [(value) => { const regex = /^([\s\S]+){20,255}$/; return value && !regex.test(value) ? "El mensaje debe tener mas de 15 caracteres" : null; }]
 }
 
 
 
 export const ContactSection = () => {
 
-    const { formState, onInputChange, isFormValid, nameValid, emailValid, topicValid, messageValid } = useForm(formData, formValidations);
+    const { formState, onInputChange,onResetForm, isFormValid, nameValid, emailValid, topicValid, messageValid } = useForm(formData, formValidations);
 
     const { name, email, topic, message } = formState;
 
+    const form = useRef();
 
 
-    const onSubmit = (e) => {
+
+    const onSubmit = async (e) => {
         e.preventDefault()
         if (!isFormValid) {
-            e.stopPropagation();
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Hubo un error al enviar tus datos, complete los campos correctamente!!",
+              });
+            return;
+        }
+        console.log(process.env.REACT_APP_EMAIL_SERVICE_ID)
+        const res = await emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
+        console.log(res)
+        if(res.status==200){
+            onResetForm();
+            Swal.fire({
+                icon: "success",
+                title: "Tus datos se enviaron con exito",
+                showConfirmButton: false,
+                timer: 1500
+              });
+        }else{
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Hubo un error al enviar tus datos, intenta nuevamente!",
+                showConfirmButton: false,
+                timer: 1500
+              });
         }
 
     }
@@ -52,11 +82,11 @@ export const ContactSection = () => {
                                     usted lo antes posible.
                                 </p>
                             </div>
-                            <form onSubmit={onSubmit} className={`d-flex flex-column gap-4 contactForm needs-validation`}>
+                            <form onSubmit={onSubmit} ref={form} className={`d-flex flex-column gap-4 contactForm needs-validation`}>
                                 <div className="form-floating">
                                     <input type="text" className='form-control' id='inputNombre' placeholder='Nombre'
-                                        aria-describedby="validationNombre" name='name' value={name} onChange={onInputChange} required/>
-                                    <label htmlFor="inputNombre ">Nombre</label>
+                                        aria-describedby="validationNombre" name='name' value={name} onChange={onInputChange} required />
+                                    <label htmlFor="inputNombre">Nombre</label>
                                     {
                                         !!nameValid && <div className="alert alert-danger" role="alert">
                                             {nameValid}
@@ -65,7 +95,7 @@ export const ContactSection = () => {
                                 </div>
                                 <div className="form-floating">
                                     <input type="email" className='form-control' id='inputEmail' placeholder='email@gmail.com'
-                                        aria-describedby="validationEmail" name='email' value={email} onChange={onInputChange} required/>
+                                        aria-describedby="validationEmail" name='email' value={email} onChange={onInputChange} required />
                                     <label htmlFor="inputEmail">Correo</label>
                                     {
                                         !!emailValid && <div className="alert alert-danger" role="alert">
@@ -75,7 +105,7 @@ export const ContactSection = () => {
                                 </div>
                                 <div className="form-floating">
                                     <input type="text" className='form-control' id='inputAsunto' placeholder='Asunto'
-                                        aria-describedby="validationTopic" name='topic' value={topic} onChange={onInputChange} required/>
+                                        aria-describedby="validationTopic" name='topic' value={topic} onChange={onInputChange} required />
                                     <label htmlFor="inputAsunto">Asunto</label>
                                     {
                                         !!topicValid && <div className="alert alert-danger" role="alert">
