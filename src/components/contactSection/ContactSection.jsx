@@ -42,9 +42,7 @@ export const ContactSection = () => {
               });
             return;
         }
-        console.log(process.env.REACT_APP_EMAIL_SERVICE_ID)
         const res = await emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
-        console.log(res)
         if(res.status==200){
             onResetForm();
             Swal.fire({
