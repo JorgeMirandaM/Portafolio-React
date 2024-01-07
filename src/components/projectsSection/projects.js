@@ -80,6 +80,14 @@ export const projects=[
         repository:"https://github.com/JorgeMirandaM/Pagina_Taller-de-carros"
     },
     {
+        image:"alurageek.png",
+        name:"Plataforma web: AluraGeek",
+        place:"Ejercicio de Bootcamp pero con aportaciones extras personales",
+        technologies:["Html 5","Css 3","JavaScript","Node js","Express","JSON","JWT","MongoDb","Mongoose"],
+        demoUrl:"https://jorgemirandam.github.io/Alura_e-commerce-AluraGeek-Frontend/",
+        repository:"https://github.com/JorgeMirandaM/Alura_e-commerce-AluraGeek-Frontend"
+    },
+    {
         image:"heroes.png",
         name:"Ejercicio: Heroes App",
         place:"Desarrollado en el curso de Alura Latam",
